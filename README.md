@@ -102,6 +102,7 @@ project-name/
 ├── requirements.txt          # 필요한 패키지 목록
 ├── README.md                 # 프로젝트 설명서
 └── .gitignore                # Git 제외 설정 파일
+```
 
 ---
 
