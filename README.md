@@ -85,7 +85,7 @@ markdown
 ---
 
 ## 🗂️ 프로젝트 구조
-
+markdown
 project-name/
 │
 ├── data/                      # 데이터 관련 폴더
