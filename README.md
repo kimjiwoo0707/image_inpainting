@@ -78,11 +78,9 @@ markdown
 ## 📊 주요 결과
 
 ### 시각적 비교 (예시)
-| 🎨 입력 이미지 | ✨ 복원 이미지 | 🌟 원본 이미지 |
-|----------------|---------------|----------------|
-|![image](https://github.com/user-attachments/assets/6f92ee36-ff94-4aad-97ca-78fe77e36ce8)
- | restored      |![image](https://github.com/user-attachments/assets/ff9d9fe7-bda8-4074-af35-ce06c56237f8)
- |
+| 🎨 입력 이미지 | ✨ 복원 이미지 |
+|----------------|---------------|
+| ![Input Image](https://github.com/user-attachments/assets/6f92ee36-ff94-4aad-97ca-78fe77e36ce8) | ![Restored Image](https://github.com/user-attachments/assets/ff9d9fe7-bda8-4074-af35-ce06c56237f8) |
 
 ---
 
