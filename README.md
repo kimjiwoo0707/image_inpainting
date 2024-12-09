@@ -10,6 +10,8 @@
 
 ---
 
+
+
 ## 📂 데이터셋 사용 안내
 
 본 프로젝트는 **데이콘**에서 제공하는 공개 데이터를 사용합니다.  
@@ -63,6 +65,26 @@ project-name/
   - [👉 processed/ 데이터 다운로드](https://github.com/username/repository-name/tree/main/data/processed)
 
  
+---
+
+## 🚀 실행 방법
+
+
+# 1️⃣ 환경 설정
+pip install -r requirements.txt
+
+# 2️⃣ 데이터 전처리
+python src/data_preprocessing.py
+
+# 3️⃣ 모델 학습
+python src/train.py
+
+# 4️⃣ 모델 추론
+python src/inference.py
+
+# 5️⃣ 제출 파일 생성
+결과는 submission/output.zip 형태로 저장됩니다.
+
 ---
 
 ## 🧠 모델 설명
@@ -127,12 +149,6 @@ project-name/
 - **히스토그램 유사도**: 복원된 이미지의 색상 일치도 평가.  
 
 ---
-# 🌈 이미지 색상화 및 손실 부분 복원 AI 🎨
-
-손상된 흑백 이미지를 복원하고 자연스러운 색을 입히는 AI 알고리즘!  
-이 프로젝트는 **역사적 사진 복원**, **의료 이미지 복구**, **영상 편집** 등 다양한 분야에서 활용될 수 있는 Vision AI 기술을 개발하기 위해 만들어졌습니다.
-
----
 
 ## 🚀 실행 방법
 
@@ -155,8 +171,7 @@ python src/inference.py
 ---
 
 ## 📊 주요 결과
-markdown
-코드 복사
+
 ### 모델 평가 지표
 - SSIM (Structural Similarity Index): 복원 이미지 품질
 - Masked SSIM: 손실 영역 복원 품질
