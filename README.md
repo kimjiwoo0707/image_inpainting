@@ -84,6 +84,7 @@ markdown
 
 ---
 
+
 ## 🗂️ 프로젝트 구조
 
 ```plaintext
@@ -102,17 +103,16 @@ project-name/
 ├── README.md                 # 프로젝트 설명서
 └── .gitignore                # Git 제외 설정 파일
 
-
-
 ---
+
 
 ## 🛠️ 사용된 기술
 
-### 주요 라이브러리
-- **PyTorch**: 딥러닝 모델 구현 및 학습을 위한 프레임워크
-- **Lightning**: PyTorch 기반의 학습 루프와 실험 관리 도구
-- **Transformers**: 자연어 처리 및 컴퓨터 비전 모델을 위한 라이브러리
-- **Segmentation Models PyTorch**: 이미지 분할 모델 구현을 위한 PyTorch 확장 라이브러리
-- **UMAP & HDBSCAN**: 차원 축소 및 클러스터링 알고리즘
-- **scikit-image**: 이미지 처리 및 분석을 위한 라이브러리
+주요 라이브러리
+PyTorch: 딥러닝 모델 구현 및 학습을 위한 프레임워크
+Lightning: PyTorch 기반의 학습 루프와 실험 관리 도구
+Transformers: 자연어 처리 및 컴퓨터 비전 모델을 위한 라이브러리
+Segmentation Models PyTorch: 이미지 분할 모델 구현을 위한 PyTorch 확장 라이브러리
+UMAP & HDBSCAN: 차원 축소 및 클러스터링 알고리즘
+scikit-image: 이미지 처리 및 분석을 위한 라이브러리
 
