@@ -41,7 +41,19 @@
 
 ## 🚀 실행 방법
 
-### 1️⃣ 환경 설정
 ```bash
+# 1️⃣ 환경 설정
 pip install -r requirements.txt
+
+# 2️⃣ 데이터 전처리
+python src/data_preprocessing.py
+
+# 3️⃣ 모델 학습
+python src/train.py
+
+# 4️⃣ 모델 추론
+python src/inference.py
+
+# 5️⃣ 제출 파일 생성
+# 결과는 submission/output.zip 형태로 저장됩니다.
 
