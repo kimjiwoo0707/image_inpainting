@@ -47,7 +47,7 @@
 
 ## 🚀 실행 방법
 
-```bash
+
 # 1️⃣ 환경 설정
 pip install -r requirements.txt
 
@@ -63,13 +63,17 @@ python src/inference.py
 # 5️⃣ 제출 파일 생성
 # 결과는 submission/output.zip 형태로 저장됩니다.
 
-📊 주요 결과
+---
+
+## 📊 주요 결과
 markdown
 코드 복사
 ### 모델 평가 지표
 - SSIM (Structural Similarity Index): 복원 이미지 품질
 - Masked SSIM: 손실 영역 복원 품질
 - 히스토그램 유사도: 색상화 품질
+
+---
 
 ### 시각적 비교 (예시)
 | 🎨 입력 이미지 | ✨ 복원 이미지 | 🌟 원본 이미지 |
@@ -88,7 +92,10 @@ project-name/
 ├── requirements.txt           # 패키지 목록
 ├── README.md                  # 프로젝트 개요
 └── .gitignore                 # Git 제외 파일 설정
-🛠️ 사용된 기술
+
+---
+
+## 🛠️ 사용된 기술
 markdown
 코드 복사
 - PyTorch
