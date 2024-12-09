@@ -62,3 +62,39 @@ python src/inference.py
 
 # 5️⃣ 제출 파일 생성
 # 결과는 submission/output.zip 형태로 저장됩니다.
+
+📊 주요 결과
+markdown
+코드 복사
+### 모델 평가 지표
+- SSIM (Structural Similarity Index): 복원 이미지 품질
+- Masked SSIM: 손실 영역 복원 품질
+- 히스토그램 유사도: 색상화 품질
+
+### 시각적 비교 (예시)
+| 🎨 입력 이미지 | ✨ 복원 이미지 | 🌟 원본 이미지 |
+|-----------------|----------------|----------------|
+| ![input](images/input_example.png) | ![restored](images/restored_example.png) | ![gt](images/gt_example.png) |
+🗂️ 프로젝트 구조
+plaintext
+코드 복사
+project-name/
+│
+├── data/                      # 데이터 관련 폴더
+├── notebooks/                 # 탐색 및 학습 노트북
+├── models/                    # 학습된 모델 및 체크포인트
+├── src/                       # 코드 파일
+├── submission/                # 제출 파일 생성 폴더
+├── requirements.txt           # 패키지 목록
+├── README.md                  # 프로젝트 개요
+└── .gitignore                 # Git 제외 파일 설정
+🛠️ 사용된 기술
+markdown
+코드 복사
+- PyTorch
+- Lightning
+- Transformers
+- Segmentation Models PyTorch
+- UMAP & HDBSCAN
+- scikit-image
+
