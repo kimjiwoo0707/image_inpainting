@@ -46,6 +46,25 @@ project-name/
 ```
 ---
 
+### 🗂️ processed/ 폴더 설명
+
+`processed/` 폴더에는 전처리된 데이터가 포함되어 있습니다.  
+이 데이터는 깃허브에 별도로 업로드되어 있으며, 아래 링크에서 다운로드할 수 있습니다:
+
+- [👉 processed/ 데이터 다운로드](https://github.com/username/repository-name/tree/main/data/processed)
+
+---
+
+### ⚠️ 데이터 사용 주의사항
+
+- 본 프로젝트에서 사용된 데이터는 **데이콘**의 대회 데이터를 기반으로 하며, 데이터의 저작권은 데이콘 및 데이터 제공자에게 있습니다.
+- 데이터를 직접 배포할 수 없으므로, 데이터를 사용하려면 반드시 [데이콘 대회 페이지](https://dacon.io/competitions)에서 직접 다운로드해야 합니다.
+- **전처리된 데이터(`processed/`)**는 학습에 사용된 중간 결과이며, 깃허브에 업로드되어 있으므로 아래 링크에서 직접 다운로드하여 활용하시면 됩니다:
+  - [👉 processed/ 데이터 다운로드](https://github.com/username/repository-name/tree/main/data/processed)
+
+ 
+---
+
 ## 🧠 모델 구조
 
 ### 주요 구성 요소
