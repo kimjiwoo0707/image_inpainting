@@ -35,14 +35,36 @@ Vision AI 기반 이미지 생성 및 복원 모델의 설계 역량을 종합�
 
 ---
 
-### 📌 주요 모델 구성
-1️⃣ **CBAM 적용된 U-Net++ 아키텍처**  
-   - Encoder의 최상위 Feature Map에 CBAM을 적용해 복원 품질 개선.  
-   - 채널 및 공간 주의 기법을 결합하여 중요한 정보를 학습.  
 
-2️⃣ **두 단계 모델 학습**  
-   - **단계 1**: 손상된 흑백 이미지를 복원 (Gray Mask Restoration).  
-   - **단계 2**: 복원된 흑백 이미지를 컬러 이미지로 변환 (Gray to Color Conversion).  
+### 📌 주요 모델 구성
+단일 모델로 구조 복원과 색상화를 동시에 수행할 경우, 손실 영역의 구조 정보와 색상 정보가 서로 간섭하여 복원 품질이 저하되는 문제가 발생한다.
+이를 해결하기 위해 본 연구에서는 구조 복원과 색상 복원을 분리한 2-Stage 파이프라인을 설계하였다.  
+
+이 때 각 Stage의 U-Net++ Encoder 최상위 Feature Map에는
+**CBAM(Convolutional Block Attention Module)**을 적용하였다.
+이를 통해 중요한 채널 및 공간 정보를 강조함으로써
+손실 영역과 구조적으로 중요한 부분에 대한 복원 성능을 향상시켰다.
+
+1) Stage 1에서는 손실 영역이 포함된 흑백 이미지를 입력으로 받아,
+손상된 구조 정보를 복원하는 데 집중한다.
+이 단계에서는 명암 대비, 경계선, 객체의 형태와 같은 구조적 특징을 우선적으로 학습한다.
+
+2) Stage 1에서는 손실 영역이 포함된 흑백 이미지를 입력으로 받아,
+손상된 구조 정보를 복원하는 데 집중한다.
+이 단계에서는 명암 대비, 경계선, 객체의 형태와 같은 구조적 특징을 우선적으로 학습한다.
+
+3) Stage 1의 출력은 입력 이미지에 Residual Connection을 통해 더해진다.
+이를 통해 이미 정상적으로 존재하는 영역의 정보 손실을 방지하고,
+모델이 손실 영역에만 집중하여 복원하도록 유도하였다.
+
+
+모델 구성 요약
+• Backbone: U-Net++
+• Attention: CBAM (Encoder 최상위 Feature 적용)
+• Encoder: EfficientNet-B4
+• Stage 1: Gray Mask Restoration (1 → 1)
+• Stage 2: Color Restoration (1 → 3)
+• Learning Strategy: Two-stage restoration with residual connection
 
 ---
 
