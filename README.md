@@ -23,8 +23,7 @@ Vision AI 기반 이미지 생성 및 복원 모델의 설계 역량을 종합�
 
 ## 🧠 모델 설명
 
-본 프로젝트에서는 **CBAM (Convolutional Block Attention Module)**을 활용하여 복원 품질을 극대화한 **U-Net++** 모델을 사용했습니다.  
-**CBAM**은 채널과 공간의 주의 메커니즘을 통해 중요한 정보를 강조하여, 이미지 복원 및 색상화의 성능을 획기적으로 향상시킵니다.
+본 프로젝트에서는 **CBAM(Convolutional Block Attention Module)** 이 적용된 U-Net++ 기반 2단계 이미지 복원 모델을 제안한다. 본 모델은 손실 영역 복원과 색상화를 분리하여 수행함으로써, 구조적 일관성과 색상 자연도를 동시에 향상시키는 것을 목표로 한다.
 
 <img width="776" height="103" alt="데이콘 색상화 unet++" src="https://github.com/user-attachments/assets/28f82bc0-aec0-4332-89c8-29de1f9f3111" />  
 
@@ -37,34 +36,33 @@ Vision AI 기반 이미지 생성 및 복원 모델의 설계 역량을 종합�
 
 
 ### 📌 주요 모델 구성
-단일 모델로 구조 복원과 색상화를 동시에 수행할 경우, 손실 영역의 구조 정보와 색상 정보가 서로 간섭하여 복원 품질이 저하되는 문제가 발생한다.
-이를 해결하기 위해 본 연구에서는 구조 복원과 색상 복원을 분리한 2-Stage 파이프라인을 설계하였다.  
+단일 모델로 구조 복원과 색상화를 동시에 수행할 경우, 손실 영역의 구조 정보와 색상 정보가 서로 간섭하여 복원 품질이 저하되는 문제가 발생한다. 이를 해결하기 위해 본 연구에서는 **구조 복원과 색상 복원을 분리한 2-Stage 파이프라인**을 설계하였다.
 
-이 때 각 Stage의 U-Net++ Encoder 최상위 Feature Map에는
-**CBAM(Convolutional Block Attention Module)**을 적용하였다.
-이를 통해 중요한 채널 및 공간 정보를 강조함으로써
-손실 영역과 구조적으로 중요한 부분에 대한 복원 성능을 향상시켰다.
+각 Stage의 U-Net++ Encoder 최상위 Feature Map에는 **CBAM(Convolutional Block Attention Module)** 을 적용하였다. 이를 통해 중요한 채널 및 공간 정보를 강조함으로써 손실 영역과 구조적으로 중요한 부분에 대한 복원 성능을 향상시켰다.
 
-1) Stage 1에서는 손실 영역이 포함된 흑백 이미지를 입력으로 받아,
-손상된 구조 정보를 복원하는 데 집중한다.
-이 단계에서는 명암 대비, 경계선, 객체의 형태와 같은 구조적 특징을 우선적으로 학습한다.
+---
 
-2) Stage 1에서는 손실 영역이 포함된 흑백 이미지를 입력으로 받아,
-손상된 구조 정보를 복원하는 데 집중한다.
-이 단계에서는 명암 대비, 경계선, 객체의 형태와 같은 구조적 특징을 우선적으로 학습한다.
+### Stage별 동작 설명
+1) Stage 1: Gray Mask Restoration
 
-3) Stage 1의 출력은 입력 이미지에 Residual Connection을 통해 더해진다.
-이를 통해 이미 정상적으로 존재하는 영역의 정보 손실을 방지하고,
-모델이 손실 영역에만 집중하여 복원하도록 유도하였다.
+Stage 1에서는 손실 영역이 포함된 흑백 이미지를 입력으로 받아, 손상된 구조 정보를 복원하는 데 집중한다. 이 단계에서는 명암 대비, 경계선, 객체의 형태와 같은 구조적 특징을 우선적으로 학습한다.
+
+2) Residual Connection
+
+Stage 1의 출력은 입력 이미지에 Residual Connection을 통해 더해진다. 이를 통해 이미 정상적으로 존재하는 영역의 정보 손실을 방지하고, 모델이 손실 영역에만 집중하여 복원하도록 유도하였다.
+
+3) Stage 2: Color Restoration
+
+Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **색상화(Color Restoration)** 를 수행한다. 이 단계에서는 객체의 질감, 색상 분포, 전역적인 색 균형을 학습하여 자연스러운 RGB 이미지 복원을 목표로 한다.
 
 
-모델 구성 요약
-• Backbone: U-Net++
-• Attention: CBAM (Encoder 최상위 Feature 적용)
-• Encoder: EfficientNet-B4
-• Stage 1: Gray Mask Restoration (1 → 1)
-• Stage 2: Color Restoration (1 → 3)
-• Learning Strategy: Two-stage restoration with residual connection
+### 모델 구성 요약  
+• Backbone: U-Net++  
+• Attention: CBAM (Encoder 최상위 Feature 적용)  
+• Encoder: EfficientNet-B4  
+• Stage 1: Gray Mask Restoration (1 → 1)  
+• Stage 2: Color Restoration (1 → 3)  
+• Learning Strategy: Two-stage restoration with residual connection  
 
 ---
 
