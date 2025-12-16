@@ -52,7 +52,7 @@ Stage 1의 출력은 입력 이미지에 Residual Connection을 통해 더해진
 3) Stage 2: Color Restoration  
 Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **색상화(Color Restoration)** 를 수행한다. 이 단계에서는 객체의 질감, 색상 분포, 전역적인 색 균형을 학습하여 자연스러운 RGB 이미지 복원을 목표로 한다.
 
-
+---
 ### 모델 구성 요약  
 • Backbone: U-Net++  
 • Attention: CBAM (Encoder 최상위 Feature 적용)  
