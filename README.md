@@ -63,41 +63,46 @@ Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **
 
 ---
 
-### ⚙️ 하이퍼파라미터
-- **학습률**: `1e-4`  
-- **배치 크기**: `8`  
-- **에폭 수**: `50`  
-- **최적화 기법**: AdamW Optimizer + Cosine Scheduler  
-- **평가 지표**:  
-  - SSIM (Structural Similarity Index)  
-  - Masked SSIM  
-  - 히스토그램 유사도  
+### ⚙️ 학습 설정 및 평가 지표
+
+모델의 안정적인 학습과 복원 품질 향상을 위해
+다음과 같은 학습 설정을 적용하였다.
+
+- **Optimizer**: AdamW  
+  → 가중치 감쇠를 통해 일반화 성능 향상
+
+- **Learning Rate**: 1e-4  
+- **Scheduler**: Cosine Annealing  
+  → 학습 후반부 진동을 줄이고 안정적인 수렴 유도
+
+- **Batch Size**: 8  
+- **Epochs**: 50 (Early Stopping 적용)
+
+#### 📊 평가 지표
+- **SSIM**: 전체 이미지 구조적 유사도 평가  
+- **Masked SSIM**: 손실 영역 중심 복원 성능 평가  
+- **Histogram Similarity**: 색상 분포의 자연스러움 평가
+
 
 ---
 
-## 📈 성능 향상 방법
+## 📈 성능 향상 전략
 
-본 프로젝트의 성능을 높이기 위해 아래와 같은 방법을 적용했습니다:
+모델 성능 및 복원 품질을 향상시키기 위해 아래와 같은 주요 전략을 적용하였다.
 
-### 🛠️ 주요 개선 기법
-1️⃣ **CBAM Attention 적용**  
-   - 채널과 공간의 중요도를 학습하여 특징을 강조.  
-   - U-Net++의 Encoder에 CBAM을 추가해 복원 품질을 대폭 향상.  
+### 🔧 핵심 개선 요소
 
-2️⃣ **Feature Embedding & 클러스터링**  
-   - **CLIP 모델**을 사용해 이미지 특징을 Embedding으로 추출.  
-   - **UMAP & HDBSCAN**으로 이상치를 제거하고 데이터 품질을 개선.  
+- **Attention 강화 (CBAM)**  
+  → 중요한 채널 및 공간 정보를 강조하여 손실 영역 복원 성능 향상
 
-3️⃣ **효율적인 데이터 전처리**  
-   - 랜덤 다각형 손상 영역 생성으로 데이터 다양성을 확보.  
-   - 전처리된 데이터를 사용해 모델 학습 안정성을 강화.  
+- **데이터 품질 개선**  
+  → CLIP 기반 Feature Embedding 후 UMAP & HDBSCAN을 활용해 이상치 제거
 
-4️⃣ **효과적인 학습 전략**  
-   - Early Stopping 및 Model Checkpoint로 과적합 방지.  
-   - K-Fold Cross Validation으로 데이터 분할 및 일반화 성능 강화.  
+- **손실 영역 중심 학습**  
+  → Masked SSIM 기반 손실 함수로 손실 영역 복원 품질 최적화
 
-5️⃣ **SSIM 기반 손실 함수**  
-   - Masked SSIM을 통해 손실 영역의 복원 품질을 최적화.  
+- **안정적인 학습 전략**  
+  → Early Stopping, Model Checkpoint, K-Fold Cross Validation 적용
 
 ---
 
@@ -124,43 +129,4 @@ Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **
 | 🎨 입력 이미지         | ✨ 복원 이미지       |
 |---------------------|-------------------|
 | ![Input Image](https://github.com/user-attachments/assets/6f92ee36-ff94-4aad-97ca-78fe77e36ce8) | ![Restored Image](https://github.com/user-attachments/assets/ff9d9fe7-bda8-4074-af35-ce06c56237f8) |
-
-
----
-
-
-## 🗂️ 프로젝트 구조
-
-```plaintext
-project-name/
-├── data/                     # 데이터 관련 폴더
-│   ├── raw/                  # 원본 데이터
-│   ├── processed/            # 전처리된 데이터
-├── notebooks/                # 탐색 및 학습 노트북
-├── models/                   # 학습된 모델 및 체크포인트
-├── src/                      # 코드 파일
-│   ├── data_preprocessing.py # 데이터 전처리 코드
-│   ├── train.py              # 학습 코드
-│   ├── inference.py          # 추론 코드
-├── submission/               # 제출 파일 생성 폴더
-├── requirements.txt          # 필요한 패키지 목록
-├── README.md                 # 프로젝트 설명서
-└── .gitignore                # Git 제외 설정 파일
-```
-
----
-
-
----
-
-## 🛠️ 사용된 기술
-
-### 주요 라이브러리
-- **PyTorch**: 딥러닝 모델 구현 및 학습을 위한 프레임워크
-- **Lightning**: PyTorch 기반의 학습 루프와 실험 관리 도구
-- **Transformers**: 자연어 처리 및 컴퓨터 비전 모델을 위한 라이브러리
-- **Segmentation Models PyTorch**: 이미지 분할 모델 구현을 위한 PyTorch 확장 라이브러리
-- **UMAP & HDBSCAN**: 차원 축소 및 클러스터링 알고리즘
-- **scikit-image**: 이미지 처리 및 분석을 위한 라이브러리
-
 
