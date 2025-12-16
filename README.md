@@ -43,15 +43,15 @@ Vision AI 기반 이미지 생성 및 복원 모델의 설계 역량을 종합�
 ---
 
 ### Stage별 동작 설명
-1) Stage 1: Gray Mask Restoration
+1. Stage 1: Gray Mask Restoration
 
 Stage 1에서는 손실 영역이 포함된 흑백 이미지를 입력으로 받아, 손상된 구조 정보를 복원하는 데 집중한다. 이 단계에서는 명암 대비, 경계선, 객체의 형태와 같은 구조적 특징을 우선적으로 학습한다.
 
-2) Residual Connection
+2. Residual Connection
 
 Stage 1의 출력은 입력 이미지에 Residual Connection을 통해 더해진다. 이를 통해 이미 정상적으로 존재하는 영역의 정보 손실을 방지하고, 모델이 손실 영역에만 집중하여 복원하도록 유도하였다.
 
-3) Stage 2: Color Restoration
+3. Stage 2: Color Restoration
 
 Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **색상화(Color Restoration)** 를 수행한다. 이 단계에서는 객체의 질감, 색상 분포, 전역적인 색 균형을 학습하여 자연스러운 RGB 이미지 복원을 목표로 한다.
 
