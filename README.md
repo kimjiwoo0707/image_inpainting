@@ -122,6 +122,8 @@ Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **
 - **Masked SSIM**: 손실 영역에서의 복원 품질을 평가.
 - **히스토그램 유사도**: 복원된 이미지의 색상 일치도를 평가.
 
+<img width="369" height="34" alt="image" src="https://github.com/user-attachments/assets/096a2d88-9a67-4418-a036-7ca7d935804e" />
+
 ---
 
 ### 시각적 비교 (예시)
