@@ -78,12 +78,6 @@ Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **
 - **Batch Size**: 8  
 - **Epochs**: 50 (Early Stopping 적용)
 
-#### 📊 평가 지표
-- **SSIM**: 전체 이미지 구조적 유사도 평가  
-- **Masked SSIM**: 손실 영역 중심 복원 성능 평가  
-- **Histogram Similarity**: 색상 분포의 자연스러움 평가
-
-
 ---
 
 ## 📰 성능 향상 전략
