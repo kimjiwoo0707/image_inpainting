@@ -115,14 +115,23 @@ Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **
 ---
 
 
-## 📊 주요 결과
+## 평가 방식
 
-### 모델 평가 지표
-- **SSIM (Structural Similarity Index)**: 복원 이미지의 품질을 정량적으로 평가.
-- **Masked SSIM**: 손실 영역에서의 복원 품질을 평가.
-- **히스토그램 유사도**: 복원된 이미지의 색상 일치도를 평가.
+본 대회는 이미지 복원 및 색상화 성능을 정량적으로 평가하기 위해 **SSIM 기반 복합 점수**를 사용한다.
 
-<img width="369" height="34" alt="image" src="https://github.com/user-attachments/assets/096a2d88-9a67-4418-a036-7ca7d935804e" />
+### 평가 산식
+
+최종 점수는 다음 세 가지 지표의 가중 평균으로 계산된다.
+
+- S (SSIM): 전체 이미지에 대한 구조적 유사도 평균
+
+- M (Masked SSIM): 손실(마스킹) 영역에 대한 SSIM 평균
+
+- C (Color Histogram Similarity): 색상 히스토그램 기반 유사도 평균
+  
+<img width="369" height="34" alt="image" src="https://github.com/user-attachments/assets/096a2d88-9a67-4418-a036-7ca7d935804e" />  
+
+손실 영역(M)과 색상 유사도(C)에 더 높은 가중치를 부여하여, 단순 구조 복원뿐 아니라 손실 영역 복원 품질과 색상 자연스러움을 중점적으로 평가한다.
 
 ---
 
