@@ -81,15 +81,13 @@ Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **
 모델의 안정적인 학습과 복원 품질 향상을 위해
 다음과 같은 학습 설정을 적용하였다.
 
-- **Optimizer**: AdamW  
-  → 가중치 감쇠를 통해 일반화 성능 향상
-
-- **Learning Rate**: 1e-4  
-- **Scheduler**: Cosine Annealing  
-  → 학습 후반부 진동을 줄이고 안정적인 수렴 유도
-
-- **Batch Size**: 8  
-- **Epochs**: 50 (Early Stopping 적용)
+| 항목 | 설정 값 | 설명 |
+|------|--------|------|
+| Optimizer | AdamW | 가중치 감쇠를 통해 일반화 성능 향상 |
+| Learning Rate | 1e-4 | 안정적인 학습을 위한 고정 학습률 |
+| Scheduler | Cosine Annealing | 학습 후반부 진동 감소 및 수렴 안정화 |
+| Batch Size | 8 | GPU 메모리 제약 고려 |
+| Epochs | 50 | Early Stopping 적용 |
 
 ---
 
