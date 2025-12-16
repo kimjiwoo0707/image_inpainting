@@ -29,6 +29,8 @@ Vision AI 기반 이미지 생성 및 복원 모델의 설계 역량을 종합�
 <img width="776" height="103" alt="데이콘 색상화 unet++" src="https://github.com/user-attachments/assets/28f82bc0-aec0-4332-89c8-29de1f9f3111" />  
 
 그림. 제안하는 2단계 이미지 복원 파이프라인.  
+
+
 1단계에서는 손실된 흑백 이미지를 복원하고, 2단계에서는 복원된 구조를 기반으로 색상화를 수행한다.
 
 ---
