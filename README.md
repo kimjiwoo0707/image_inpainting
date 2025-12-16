@@ -26,6 +26,11 @@ Vision AI 기반 이미지 생성 및 복원 모델의 설계 역량을 종합�
 본 프로젝트에서는 **CBAM (Convolutional Block Attention Module)**을 활용하여 복원 품질을 극대화한 **U-Net++** 모델을 사용했습니다.  
 **CBAM**은 채널과 공간의 주의 메커니즘을 통해 중요한 정보를 강조하여, 이미지 복원 및 색상화의 성능을 획기적으로 향상시킵니다.
 
+<img width="776" height="103" alt="데이콘 색상화 unet++" src="https://github.com/user-attachments/assets/28f82bc0-aec0-4332-89c8-29de1f9f3111" />  
+
+그림. 제안하는 2단계 이미지 복원 파이프라인.
+1단계에서는 손실된 흑백 이미지를 복원하고, 2단계에서는 복원된 구조를 기반으로 색상화를 수행한다.
+
 ---
 
 ### 📌 주요 모델 구성
