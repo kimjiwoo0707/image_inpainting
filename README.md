@@ -104,18 +104,11 @@ Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **
 - **안정적인 학습 전략**  
   → Early Stopping, Model Checkpoint, K-Fold Cross Validation 적용
 
----
-
-### 🚀 적용 결과
-- **SSIM**: 이미지 전체의 복원 품질 평가.  
-- **Masked SSIM**: 손실 영역에서의 복원 품질 평가.  
-- **히스토그램 유사도**: 복원된 이미지의 색상 일치도 평가.
-
 
 ---
 
 
-## 평가 방식
+## 📰 평가 방식
 
 본 대회는 이미지 복원 및 색상화 성능을 정량적으로 평가하기 위해 **SSIM 기반 복합 점수**를 사용한다.
 
@@ -137,7 +130,7 @@ Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **
 
 ### 시각적 비교 (예시)
 
-| 🎨 입력 이미지         | ✨ 복원 이미지       |
+|입력 이미지         |복원 이미지       |
 |---------------------|-------------------|
 | ![Input Image](https://github.com/user-attachments/assets/6f92ee36-ff94-4aad-97ca-78fe77e36ce8) | ![Restored Image](https://github.com/user-attachments/assets/ff9d9fe7-bda8-4074-af35-ce06c56237f8) |
 
