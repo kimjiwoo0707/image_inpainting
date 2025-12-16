@@ -141,3 +141,23 @@ Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **
 |---------------------|-------------------|
 | ![Input Image](https://github.com/user-attachments/assets/6f92ee36-ff94-4aad-97ca-78fe77e36ce8) | ![Restored Image](https://github.com/user-attachments/assets/ff9d9fe7-bda8-4074-af35-ce06c56237f8) |
 
+---
+
+## 📰 대회를 통해 얻은 경험과 성과
+
+[대회에서 얻은 경험]
+
+- 손실 영역 복원(Inpainting)과 색상화(Colorization)가 결합된 이미지 복원 문제를 데이터 중심으로 분석하고 해결한 경험
+
+- 단일 모델 접근의 한계를 인식하고, 구조 복원과 색상 복원을 분리한 2-Stage 모델 파이프라인을 설계한 경험
+
+- U-Net++ 기반 Encoder–Decoder 구조에 CBAM Attention을 적용하여 복원 성능을 개선한 모델 설계 경험
+
+- SSIM, Masked SSIM, 색상 히스토그램 유사도 등 복합 평가 지표를 고려한 모델 학습 및 성능 최적화 경험
+
+- CLIP 기반 Feature Embedding과 클러스터링을 활용한 데이터 품질 개선 및 이상치 제거 전략 적용 경험
+
+[정리]
+
+본 대회를 통해 이미지 복원 문제를 단순한 픽셀 복원이 아닌 구조적 일관성과 색상 자연도를 동시에 고려해야 하는 Vision AI 문제로 인식하고 접근하는 경험을 쌓을 수 있었다. 특히 구조 복원과 색상화를 분리한 2단계 파이프라인과 Attention 기반 특징 강조 전략을 설계·적용함으로써, 복합 이미지 복원 문제에서 모델 구조 설계의 중요성을 실질적으로 체감하였다.  
+이러한 접근을 통해 Private Leaderboard 기준 상위 5% (7 / 140팀) 의 성과를 달성하였으며, Vision AI 기반 생성·복원 모델 설계 역량을 체계적으로 강화할 수 있는 의미 있는 경험이었다.
