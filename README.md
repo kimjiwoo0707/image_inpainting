@@ -159,3 +159,27 @@ Stage 2에서는 Stage 1에서 복원된 흑백 구조 정보를 기반으로 **
 
 본 대회를 통해 이미지 복원 문제를 단순한 픽셀 복원이 아닌 구조적 일관성과 색상 자연도를 동시에 고려해야 하는 Vision AI 문제로 인식하고 접근하는 경험을 쌓을 수 있었다. 특히 구조 복원과 색상화를 분리한 2단계 파이프라인과 Attention 기반 특징 강조 전략을 설계·적용함으로써, 복합 이미지 복원 문제에서 모델 구조 설계의 중요성을 실질적으로 체감하였다.  
 이러한 접근을 통해 Private Leaderboard 기준 상위 5% (7 / 140팀) 의 성과를 달성하였으며, Vision AI 기반 생성·복원 모델 설계 역량을 체계적으로 강화할 수 있는 의미 있는 경험이었다.
+
+---
+
+## Skills
+
+<div align="left">
+
+<img src="https://img.shields.io/badge/Python-FDE68A?style=for-the-badge&logo=python&logoColor=white"/>
+<img src="https://img.shields.io/badge/PyTorch-FECACA?style=for-the-badge&logo=pytorch&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/Computer_Vision-A7F3D0?style=for-the-badge&logo=opencv&logoColor=white"/>
+<img src="https://img.shields.io/badge/Image_Restoration-BFDBFE?style=for-the-badge&logo=adobe&logoColor=white"/>
+<img src="https://img.shields.io/badge/Image_Colorization-FBCFE8?style=for-the-badge&logo=artstation&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/U--Net++-C7D2FE?style=for-the-badge&logo=deepnote&logoColor=white"/>
+<img src="https://img.shields.io/badge/Attention_(CBAM)-E9D5FF?style=for-the-badge&logo=brainly&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/SSIM_&_Masked_SSIM-D1FAE5?style=for-the-badge&logo=databricks&logoColor=white"/>
+<img src="https://img.shields.io/badge/Data_Clustering_(UMAP/HDBSCAN)-FDE2E2?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/Vision_AI_Competition-BAE6FD?style=for-the-badge&logo=academia&logoColor=white"/>
+
+</div>
+
